@@ -1,0 +1,5 @@
+com/pahana/adminsystemui/JakartaRestConfiguration.class
+com/pahana/adminsystemui/resources/JakartaEE10Resource.class
+com/pahana/adminsystemui/resources/ApplicationConfig.class
+com/pahana/adminsystemui/servlet/LogoutServlet.class
+com/pahana/adminsystemui/servlet/LoginServlet.class
