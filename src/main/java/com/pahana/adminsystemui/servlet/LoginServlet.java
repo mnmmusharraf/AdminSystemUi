@@ -6,6 +6,7 @@ import jakarta.servlet.http.*;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.net.URLEncoder;
 
 public class LoginServlet extends HttpServlet {
     @Override
@@ -36,8 +37,10 @@ public class LoginServlet extends HttpServlet {
             response.sendRedirect("index.jsp");
         } else {
             // login failed
-            request.setAttribute("error", "Invalid username or password.");
-            request.getRequestDispatcher("admin-login.jsp").forward(request, response);
+//            request.setAttribute("error", "Invalid username or password.");
+//            request.getRequestDispatcher("admin-login.jsp").forward(request, response);
+              String errorMsg = URLEncoder.encode("Invalid username or password","UTF-8");
+              response.sendRedirect("admin-login.jsp?error="+errorMsg);
         }
     }
 }

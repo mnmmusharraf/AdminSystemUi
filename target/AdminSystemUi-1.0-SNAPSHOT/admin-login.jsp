@@ -56,10 +56,18 @@
                         />
                 </div>
 
-                <% String error = (String) request.getAttribute("error"); %>
+                <%-- String error = (String) request.getAttribute("error"); %>
                 <% if (error != null) {%>
                 <div class="alert alert-danger mb-3" role="alert"><%= error%></div>
-                <% }%>
+                <% } --%>
+                
+                <% String error = request.getParameter("error");
+                    if(error!=null){
+                %>
+                <div class="alert alert-danger mb-3" role="alert"><%= error%></div>
+                <%
+                    }
+                %>
 
                 <button type="submit" class="btn btn-primary w-100">Login</button>
             </form>
