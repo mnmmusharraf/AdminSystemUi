@@ -17,6 +17,4 @@ jobs:
         uses: actions/checkout@v4
 
       - name: List frontend project files
-        run: |
-          cd AdminSystemUi
-          ls -l
+        run: ls -l
