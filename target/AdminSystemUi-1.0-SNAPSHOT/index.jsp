@@ -3,7 +3,7 @@
     String username = (String) session.getAttribute("adminUser");
     if (username == null) {
         response.sendRedirect("admin-login.jsp");
-        return;
+        return; 
     }
 
     // Prevent caching
