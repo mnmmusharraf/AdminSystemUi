@@ -2,21 +2,21 @@ name: Frontend CI
 
 on:
   push:
-    paths:
-      - 'AdminSystemUi/**'
+    branches:
+      - master
   pull_request:
-    paths:
-      - 'AdminSystemUi/**'
+    branches:
+      - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-    - name: List project files (Basic frontend check)
-      run: |
-        cd AdminSystemUi
-        ls -l
+      - name: List frontend project files
+        run: |
+          cd AdminSystemUi
+          ls -l
