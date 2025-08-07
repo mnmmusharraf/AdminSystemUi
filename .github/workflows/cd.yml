@@ -21,19 +21,12 @@ jobs:
 
       - name: Build WAR with Maven
         run: mvn clean install
-        working-directory: AdminSystemUi
 
       - name: Verify WAR file exists
         run: |
-          if [ ! -f AdminSystemUi/target/*.war ]; then
+          if ls target/*.war 1> /dev/null 2>&1; then
+            echo "WAR file found."
+          else
             echo "WAR file not found!"
             exit 1
-          else
-            echo "WAR file found."
           fi
-
-      
-      - name: Deploy to GlassFish autodeploy
-        run: |
-          cp AdminSystemUi/target/*.war /home/musharraf/GlassFish_Server/glassfish/domains/domain1/autodeploy/
-          echo "WAR file deployed to GlassFish autodeploy directory."
